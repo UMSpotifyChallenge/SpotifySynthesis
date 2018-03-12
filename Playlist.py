@@ -11,7 +11,7 @@ class Playlist:
     #     return len(self.tracks)
 
     def print_edge_pair(self):
-        with open("edgepair.txt", 'w') as f_out:
+        with open("edgepair.txt", 'a') as f_out:
             for t in self.tracks:
                 f_out.write(str(self.pid))
                 f_out.write("\t")
@@ -20,7 +20,7 @@ class Playlist:
                 # print(self.pid, t.tid, sep="\t")
 
     def print_hypergraph(self):
-        with open("hypergraph.txt", 'w') as f_out:
+        with open("hypergraph.txt", 'a') as f_out:
             # print(self.pid, end=":\t")
             f_out.write(str(self.pid))
             f_out.write("\t")

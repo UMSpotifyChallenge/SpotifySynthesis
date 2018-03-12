@@ -6,7 +6,7 @@ from Playlist import Playlist
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--p", type=int, default=30, help="number of playlists")
+    parser.add_argument("--p", type=int, default=100, help="number of playlists")
     parser.add_argument("--t", type=int, default=50, help="number of tracks in each playlist")
     parser.add_argument("--o", type=int, default=20, help="number of tracks overlapping")
     args = parser.parse_args()
@@ -43,6 +43,11 @@ if __name__ == '__main__':
         print("track",i,"\t",sortedByCount[i].number_of_appearance())
 
     print("\nWrite graphs to file")
-    playlists[0].print_edge_pair()
-    playlists[0].print_hypergraph()
+    # erase contents of the files
+    open('edgepair.txt', 'w').close()
+    open('hypergraph.txt', 'w').close()
+    # append to them
+    for p in playlists:
+        p.print_edge_pair()
+        p.print_hypergraph()
 
