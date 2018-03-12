@@ -1,0 +1,6 @@
+>> python3 main.py
+
+optional arguments:
+  --p P       number of playlists
+  --t T       number of tracks in each playlist
+  --o O       number of tracks overlapping
