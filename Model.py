@@ -30,11 +30,14 @@ class Model(metaclass=ModelMeta):
     @classmethod
     def print_hypergraph(cls):
         file = open(cls.__name__+"_hypergraph.txt", 'w')
+        # for i in cls.all_items:
+        #     print(i.iid, end="\t", file=file)
+        #     for t in i.tracks():
+        #         print(t.iid, end=",", file=file)
+        #     print(file=file)
         for i in cls.all_items:
-            print(i.iid, end="\t", file=file)
             for t in i.tracks():
-                print(t.iid, end=",", file=file)
-            print(file=file)
+                print(t.iid, i.iid, sep="\t", file=file)
 
     # def print_edge_pair(self):
     #     with open(self.__class__.__name__+"_edgepair.txt", 'a') as f_out:
@@ -92,15 +95,21 @@ class Track(Model):
         super().__init__(iid)
         self.album = None
         self.playlists = []
+        self.f1 = None
+        self.f2 = None
+        self.f3 = None
 
     def added_to_album(self, album):
         self.album = album
         album.contains.append(self)
 
         gid = self.album.genre.iid  # feature value is determined by track's genre
-        Feature1.chooseRandom(gid).contains.append(self)
-        Feature2.chooseRandom(gid).contains.append(self)
-        Feature3.chooseRandom(gid).contains.append(self)
+        self.f1 = Feature1.chooseRandom(gid)
+        self.f1.contains.append(self)
+        self.f2 = Feature2.chooseRandom(gid)
+        self.f2.contains.append(self)
+        self.f3 = Feature3.chooseRandom(gid)
+        self.f3.contains.append(self)
 
     def added_to_playlist(self, p):
         self.playlists.append(p)
