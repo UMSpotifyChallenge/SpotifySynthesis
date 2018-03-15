@@ -44,7 +44,7 @@ if __name__ == '__main__':
             for tid in range(tracksPerPlaylist - overlapCount):
                 t = Track.create() # new track
                 p.add_track(t)
-
+        p.shuffle()
         Playlist.all_items.append(p)
 
 
