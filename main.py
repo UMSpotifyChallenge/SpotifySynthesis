@@ -45,7 +45,6 @@ if __name__ == '__main__':
                 t = Track.create() # new track
                 p.add_track(t)
         p.shuffle()
-        Playlist.all_items.append(p)
 
 
     print("Result: number_of_appearance")
