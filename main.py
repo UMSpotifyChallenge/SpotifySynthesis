@@ -15,31 +15,29 @@ if __name__ == '__main__':
     trackCountInPlaylist = args.t
     overlapCount = args.o
 
-    playlists = []
-
-    for pid in range(playlistCount):
-        p = Playlist(pid)
-        if pid == 0:
+    for _ in range(playlistCount):
+        p = Playlist.create()
+        if p.iid == 0:
             for tid in range(trackCountInPlaylist):
-                t = Track.createTrack()
+                t = Track.create()
                 p.add_track(t)
         else:
             # randomly choose previously created tracks as many as overlap count
-            previous = sample(range(len(Track.tracks)), overlapCount)
+            previous = sample(range(Track.counts()), overlapCount)
             for tid in previous:
-                t = Track.tracks[tid] # previous tracks
+                t = Track.all_items[tid] # previous tracks
                 p.add_track(t)
             # create new tracks
             for tid in range(trackCountInPlaylist-overlapCount):
-                t = Track.createTrack() # new track
+                t = Track.create() # new track
                 p.add_track(t)
 
-        playlists.append(p)
+        Playlist.all_items.append(p)
 
 
     print("Result: number_of_appearance")
-    sortedByCount = sorted(Track.tracks, key=methodcaller('number_of_appearance'), reverse=True)
-    for i in range(min(20, len(Track.tracks))):
+    sortedByCount = sorted(Track.all_items, key=methodcaller('number_of_appearance'), reverse=True)
+    for i in range(min(20, Track.counts())):
         print("track",i,"\t",sortedByCount[i].number_of_appearance())
 
     print("\nWrite graphs to file")
@@ -47,7 +45,7 @@ if __name__ == '__main__':
     open('edgepair.txt', 'w').close()
     open('hypergraph.txt', 'w').close()
     # append to them
-    for p in playlists:
+    for p in Playlist.all_items:
         p.print_edge_pair()
         p.print_hypergraph()
 

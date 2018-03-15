@@ -1,16 +1,25 @@
-class Model:
-    all_items = []
+class ModelMeta(type):
+    def __new__(cls, name, bases, attrs):
+        new_class = super(ModelMeta, cls).__new__(cls, name, bases, attrs)
+        new_class.all_items = []
+        return new_class
 
+
+class Model(metaclass=ModelMeta):
     def __init__(self, iid):
         self.iid = iid
         self.contains = []
 
     @classmethod
     def create(cls):
-        count = len(cls.items)
+        count = len(cls.all_items)
         i = cls(count)
         cls.all_items.append(i)
         return i
+
+    @classmethod
+    def counts(cls):
+        return len(cls.all_items)
 
 
 class Artist(Model):
