@@ -84,6 +84,7 @@ if __name__ == '__main__':
         print("\tArtist {}:\t{} albums,\t{} tracks\tin {} genres".format(a.iid, len(a.contains), len(a.tracks()), differentGenreCount), file=file)
 
     print("# appearance of track in playlists", file=file)
+    totalCount = 0
     sortedByCount = sorted(Track.all_items, key=methodcaller('number_of_appearance'), reverse=True)
     binSize = 50
     steps = int(Track.counts() / binSize)
@@ -91,8 +92,10 @@ if __name__ == '__main__':
         count = 0
         bin = range(i*binSize, min((i+1)*binSize, Track.counts()))
         for j in bin:
-            count += Track.all_items[j].number_of_appearance()
+            count += sortedByCount[j].number_of_appearance()
         print("\tTracks in {}:\t{}".format(bin, count), file=file)
+        totalCount += count
+    print("total # appearance: ", totalCount, file=file)
 
     for f in features:
         f.print_result(file)
@@ -102,3 +105,4 @@ if __name__ == '__main__':
     Artist.print_hypergraph()
     Genre.print_hypergraph()
     Playlist.print_hypergraph()
+    Track.print_playlist()

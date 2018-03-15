@@ -118,6 +118,15 @@ class Track(Model):
     def number_of_appearance(self):
         return len(self.playlists)
 
+    @classmethod
+    def print_playlist(cls):
+        file = open("Track_playlistList.txt", 'w')
+        for t in cls.all_items:
+            print(t.iid, end="\t", file=file)
+            for p in t.playlists:
+                print(p.iid, end=",", file=file)
+            print(file=file)
+
 
 class Playlist(Model):
     def shuffle(self):
