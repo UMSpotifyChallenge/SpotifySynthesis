@@ -10,8 +10,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--genre", type=int, default=8, help="number of genres")
-    parser.add_argument("--artist", type=int, default=50, help="number of artists")
-    parser.add_argument("--playlist", type=int, default=100, help="number of playlists")
+    parser.add_argument("--artist", type=int, default=100, help="number of artists")
+    parser.add_argument("--playlist", type=int, default=1000, help="number of playlists")
     parser.add_argument("--min_albums_per_artist", type=int, default=1, help="min number of albums per artists")
     parser.add_argument("--max_albums_per_artist", type=int, default=5, help="max number of albums per artists")
     parser.add_argument("--min_tracks_per_album", type=int, default=5, help="min number of songs per album")
