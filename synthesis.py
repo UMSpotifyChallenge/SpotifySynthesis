@@ -16,8 +16,8 @@ if __name__ == '__main__':
     parser.add_argument("--max_albums_per_artist", type=int, default=5, help="max number of albums per artists")
     parser.add_argument("--min_tracks_per_album", type=int, default=5, help="min number of songs per album")
     parser.add_argument("--max_tracks_per_album", type=int, default=15, help="max number of songs per album")
-    parser.add_argument("--min_tracks_per_playlist", type=int, default=20, help="min number of songs per playlist")
-    parser.add_argument("--max_tracks_per_playlist", type=int, default=50, help="max number of songs per playlist")
+    parser.add_argument("--min_tracks_per_playlist", type=int, default=30, help="min number of songs per playlist")
+    parser.add_argument("--max_tracks_per_playlist", type=int, default=60, help="max number of songs per playlist")
     args = parser.parse_args()
 
     parser.print_help(file=file)
@@ -96,6 +96,11 @@ if __name__ == '__main__':
         print("\tTracks in {}:\t{}".format(bin, count), file=file)
         totalCount += count
     print("total # appearance: ", totalCount, file=file)
+
+    print("Top 10 tracks", file=file)
+    for i in range(10):
+        t = sortedByCount[i]
+        print("\tTrack{}:\t{}".format(t.iid, t.number_of_appearance()), file=file)
 
     for f in features:
         f.print_result(file)
