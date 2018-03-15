@@ -3,6 +3,7 @@ import random
 import numpy as np
 from operator import methodcaller
 from Model import Genre, Artist, Album, Track, Playlist
+from Model import Feature1, Feature2, Feature3
 
 if __name__ == '__main__':
     file = open("README", "w") # README is our result, so that github will show it nicely :)
@@ -28,6 +29,10 @@ if __name__ == '__main__':
     albumsPerArtistRange = range(args.min_albums_per_artist, args.max_albums_per_artist+1)
     tracksPerAlbumRange = range(args.min_tracks_per_album, args.max_tracks_per_album+1)
     tracksPerPlaylistRange = range(args.min_tracks_per_playlist, args.max_tracks_per_playlist+1)
+
+    features = [Feature1, Feature2, Feature3]
+    for f in features:
+        f.createFeatures()
 
     for _ in range(genreCount):
         Genre.create()
@@ -89,14 +94,11 @@ if __name__ == '__main__':
             count += Track.all_items[j].number_of_appearance()
         print("\tTracks in {}:\t{}".format(bin, count), file=file)
 
+    for f in features:
+        f.print_result(file)
+        f.print_hypergraph()
+
     Album.print_hypergraph()
     Artist.print_hypergraph()
     Genre.print_hypergraph()
     Playlist.print_hypergraph()
-    # open('edgepair.txt', 'w').close()
-    # open('hypergraph.txt', 'w').close()
-    # # append to them
-    # for p in Playlist.all_items:
-    #     p.print_edge_pair()
-    #     p.print_hypergraph()
-

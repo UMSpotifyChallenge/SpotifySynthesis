@@ -1,4 +1,4 @@
-from random import shuffle
+import random
 
 
 class ModelMeta(type):
@@ -97,6 +97,11 @@ class Track(Model):
         self.album = album
         album.contains.append(self)
 
+        gid = self.album.genre.iid  # feature value is determined by track's genre
+        Feature1.chooseRandom(gid).contains.append(self)
+        Feature2.chooseRandom(gid).contains.append(self)
+        Feature3.chooseRandom(gid).contains.append(self)
+
     def added_to_playlist(self, p):
         self.playlists.append(p)
         p.contains.append(self)
@@ -107,7 +112,7 @@ class Track(Model):
 
 class Playlist(Model):
     def shuffle(self):
-        shuffle(self.contains)
+        random.shuffle(self.contains)
 
     def add_track(self, track):
         if track in self.contains:
@@ -115,3 +120,33 @@ class Playlist(Model):
         else:
             track.added_to_playlist(self)
             return True
+
+
+class Feature(Model):
+    @classmethod
+    def createFeatures(cls):
+        for _ in range(random.choice(range(3, 10))):
+            cls.create()
+
+    @classmethod
+    def chooseRandom(cls, seed):
+        bias = seed % cls.counts()  # based on seed
+        weights = [1] * cls.counts()
+        weights[bias] = cls.counts() * random.choice(range(3, 9))  # probability of biased is 75% ~ 90%
+        return random.choices(cls.all_items, weights)[0]
+
+    @classmethod
+    def print_result(cls, file):
+        print(cls.__name__, file=file)
+        for f in cls.all_items:
+            print("\tvalue {}:\t{} tracks".format(f.iid, len(f.tracks())), file=file)
+
+
+class Feature1(Feature):
+    pass
+
+class Feature2(Feature):
+    pass
+
+class Feature3(Feature):
+    pass
