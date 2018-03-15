@@ -27,24 +27,33 @@ class Model(metaclass=ModelMeta):
     def tracks(self):
         return self.contains
 
-    def print_edge_pair(self):
-        with open(self.__class__.__name__+"_edgepair.txt", 'a') as f_out:
-            for t in self.tracks():
-                f_out.write(str(self.iid))
-                f_out.write("\t")
-                f_out.write(str(t.iid))
-                f_out.write("\n")
-                # print(self.pid, t.tid, sep="\t")
+    @classmethod
+    def print_hypergraph(cls):
+        file = open(cls.__name__+"_hypergraph.txt", 'w')
+        for i in cls.all_items:
+            print(i.iid, end="\t", file=file)
+            for t in i.tracks():
+                print(t.iid, end=",", file=file)
+            print(file=file)
 
-    def print_hypergraph(self):
-        with open(self.__class__.__name__+"_hypergraph.txt", 'a') as f_out:
-            # print(self.pid, end=":\t")
-            f_out.write(str(self.iid))
-            f_out.write("\t")
-            for t in self.tracks():
-                f_out.write(str(t.iid))
-                f_out.write(",")
-            f_out.write("\n")
+    # def print_edge_pair(self):
+    #     with open(self.__class__.__name__+"_edgepair.txt", 'a') as f_out:
+    #         for t in self.tracks():
+    #             f_out.write(str(self.iid))
+    #             f_out.write("\t")
+    #             f_out.write(str(t.iid))
+    #             f_out.write("\n")
+    #             # print(self.pid, t.tid, sep="\t")
+    #
+    # def print_hypergraph(self):
+    #     with open(self.__class__.__name__+"_hypergraph.txt", 'a') as f_out:
+    #         # print(self.pid, end=":\t")
+    #         f_out.write(str(self.iid))
+    #         f_out.write("\t")
+    #         for t in self.tracks():
+    #             f_out.write(str(t.iid))
+    #             f_out.write(",")
+    #         f_out.write("\n")
 
 
 class Genre(Model):

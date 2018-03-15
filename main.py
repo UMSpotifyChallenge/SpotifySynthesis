@@ -59,14 +59,14 @@ if __name__ == '__main__':
         playlist.shuffle()
 
     file = open("result.txt", "w")
-    print("Total tracks: ", Track.counts(), file=file)
-    print("Total albums: ", Album.counts(), file=file)
+    print("# tracks: ", Track.counts(), file=file)
+    print("# albums: ", Album.counts(), file=file)
 
-    print("Total genres: ", Genre.counts(), file=file)
+    print("# genres: ", Genre.counts(), file=file)
     for g in Genre.all_items:
         print("\tGenre {}:\t{} albums,\t{} tracks".format(g.iid, len(g.contains), len(g.tracks())), file=file)
 
-    print("Total artists: ", Artist.counts(), file=file)
+    print("# artists: ", Artist.counts(), file=file)
     for a in Artist.all_items:
         genres = [0] * genreCount
         for album in a.contains:
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         differentGenreCount = genres.count(1)
         print("\tArtist {}:\t{} albums,\t{} tracks\tin {} genres".format(a.iid, len(a.contains), len(a.tracks()), differentGenreCount), file=file)
 
-    print("Number_of_appearance in playlists", file=file)
+    print("# appearance of track in playlists", file=file)
     sortedByCount = sorted(Track.all_items, key=methodcaller('number_of_appearance'), reverse=True)
     binSize = 50
     steps = int(Track.counts() / binSize)
@@ -85,11 +85,14 @@ if __name__ == '__main__':
             count += Track.all_items[j].number_of_appearance()
         print("\tTracks in {}:\t{}".format(bin, count), file=file)
 
-
-    open('edgepair.txt', 'w').close()
-    open('hypergraph.txt', 'w').close()
-    # append to them
-    for p in Playlist.all_items:
-        p.print_edge_pair()
-        p.print_hypergraph()
+    Album.print_hypergraph()
+    Artist.print_hypergraph()
+    Genre.print_hypergraph()
+    Playlist.print_hypergraph()
+    # open('edgepair.txt', 'w').close()
+    # open('hypergraph.txt', 'w').close()
+    # # append to them
+    # for p in Playlist.all_items:
+    #     p.print_edge_pair()
+    #     p.print_hypergraph()
 
