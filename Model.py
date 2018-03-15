@@ -99,3 +99,10 @@ class Track(Model):
 class Playlist(Model):
     def shuffle(self):
         shuffle(self.contains)
+
+    def add_track(self, track):
+        if track in self.contains:
+            return False
+        else:
+            track.added_to_playlist(self)
+            return True

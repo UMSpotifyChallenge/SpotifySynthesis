@@ -1,5 +1,6 @@
 import argparse
 import random
+import numpy as np
 from operator import methodcaller
 from Model import Genre, Artist, Album, Track, Playlist
 
@@ -14,7 +15,6 @@ if __name__ == '__main__':
     parser.add_argument("--max_tracks_per_album", type=int, default=15, help="max number of songs per album")
     parser.add_argument("--min_tracks_per_playlist", type=int, default=20, help="min number of songs per playlist")
     parser.add_argument("--max_tracks_per_playlist", type=int, default=50, help="max number of songs per playlist")
-    parser.add_argument("--overlap", type=int, default=30, help="percentage of tracks overlapping")
     args = parser.parse_args()
 
     genreCount = args.genre
@@ -23,30 +23,41 @@ if __name__ == '__main__':
     albumsPerArtistRange = range(args.min_albums_per_artist, args.max_albums_per_artist+1)
     tracksPerAlbumRange = range(args.min_tracks_per_album, args.max_tracks_per_album+1)
     tracksPerPlaylistRange = range(args.min_tracks_per_playlist, args.max_tracks_per_playlist+1)
-    overlapPercentage = args.overlap
 
     for _ in range(genreCount):
         Genre.create()
 
     for artistID in range(artistCount):
         artist = Artist.create()
+        biasGenre = artistID % genreCount  # an artist is likely to stick to certain genre
         weights = [1] * genreCount
-        biasGenre = artistID % genreCount  # an artist is likely to stick to one genre
         weights[biasGenre] = genreCount * random.choice(range(3, 9))  # probability of biased genre is 75% ~ 90%
-        albumsPerArtist = random.choice(albumsPerArtistRange)
+        albumsPerArtist = random.choice(albumsPerArtistRange)  # random number of albums
         for albumID in range(albumsPerArtist):
             album = Album.create()
             album.added_to_artist(artist)
             genre = random.choices(Genre.all_items, weights)[0]  # random genre (with bias) chosen
             album.added_to_genre(genre)
-            tracksPerAlbum = random.choice(tracksPerAlbumRange)
-            # print("Artist {}\tAlbum {}:\t{} tracks".format(artistID, albumID, tracksPerAlbum))
+            tracksPerAlbum = random.choice(tracksPerAlbumRange)  # random number of tracks
             for _ in range(tracksPerAlbum):
                 track = Track.create()
                 track.added_to_album(album)
-        # print()
 
-    # file = None
+    for pid in range(playlistCount):
+        playlist = Playlist.create()
+        biasGenre = pid % genreCount  # a playlist is likely to be based on certain genre
+        weights = [1] * genreCount
+        weights[biasGenre] = genreCount * random.choice(range(3, 9))  # probability of biased genre is 75% ~ 90%
+        tracksPerPlaylist = random.choice(tracksPerPlaylistRange)  # random number of tracks
+        for _ in range(tracksPerPlaylist):
+            genre = random.choices(Genre.all_items, weights)[0]  # it chooses random genre with bias
+            while True:
+                t = int(np.random.triangular(0, 0, len(genre.tracks())))  # lower-numbered tracks are more likely
+                track = genre.tracks()[t]
+                if playlist.add_track(track):  # check no duplicate
+                    break
+        playlist.shuffle()
+
     file = open("result.txt", "w")
     print("Total tracks: ", Track.counts(), file=file)
     print("Total albums: ", Album.counts(), file=file)
@@ -63,35 +74,18 @@ if __name__ == '__main__':
         differentGenreCount = genres.count(1)
         print("\tArtist {}:\t{} albums,\t{} tracks\tin {} genres".format(a.iid, len(a.contains), len(a.tracks()), differentGenreCount), file=file)
 
-
-    for _ in range(playlistCount):
-        p = Playlist.create()
-        tracksPerPlaylist = random.choice(tracksPerPlaylistRange)
-        if p.iid == 0:
-            for tid in range(tracksPerPlaylist):
-                t = Track.create()
-                t.added_to_playlist(p)
-        else:
-            overlapCount = int(tracksPerPlaylist*overlapPercentage/100)
-            # randomly choose previously created tracks as many as overlap count
-            previous = random.sample(range(Track.counts()), overlapCount)
-            for tid in previous:
-                t = Track.all_items[tid] # previous tracks
-                t.added_to_playlist(p)
-            # create new tracks
-            for tid in range(tracksPerPlaylist - overlapCount):
-                t = Track.create() # new track
-                t.added_to_playlist(p)
-        p.shuffle()
-
-
-    print("Result: number_of_appearance")
+    print("Number_of_appearance in playlists", file=file)
     sortedByCount = sorted(Track.all_items, key=methodcaller('number_of_appearance'), reverse=True)
-    for i in range(min(20, Track.counts())):
-        print("track",i,"\t",sortedByCount[i].number_of_appearance())
+    binSize = 50
+    steps = int(Track.counts() / binSize)
+    for i in range(steps):
+        count = 0
+        bin = range(i*binSize, min((i+1)*binSize, Track.counts()))
+        for j in bin:
+            count += Track.all_items[j].number_of_appearance()
+        print("\tTracks in {}:\t{}".format(bin, count), file=file)
 
-    print("\nWrite graphs to file")
-    # erase contents of the files
+
     open('edgepair.txt', 'w').close()
     open('hypergraph.txt', 'w').close()
     # append to them
