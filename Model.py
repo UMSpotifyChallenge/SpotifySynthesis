@@ -1,3 +1,6 @@
+from random import shuffle
+
+
 class ModelMeta(type):
     def __new__(cls, name, bases, attrs):
         new_class = super(ModelMeta, cls).__new__(cls, name, bases, attrs)
@@ -41,11 +44,11 @@ class Model(metaclass=ModelMeta):
             f_out.write("\n")
 
 
+class Genre(Model):
+    pass
+
 
 class Artist(Model):
-    # def add_album(self, album):
-    #     album.added_to_artist(self)
-    #     self.contains.append(album)
     pass
 
 
@@ -64,8 +67,26 @@ class Album(Model):
         genre.contains.append(self)
 
 
-class Genre(Model):
-    # def add_album(self, album):
-    #     album.added_to_genre(self)
-    #     self.contains.append(album)
-    pass
+class Track(Model):
+    def __init__(self, iid):
+        super().__init__(iid)
+        self.album = None
+
+    def added_to_album(self, album):
+        self.album = album
+        album.contains.append(self)
+
+    def added_to_playlist(self, p):
+        self.contains.append(p)
+
+    def number_of_appearance(self):
+        return len(self.contains)
+
+
+class Playlist(Model):
+    def add_track(self, t):
+        t.added_to_playlist(self)
+        self.contains.append(t)
+
+    def shuffle(self):
+        shuffle(self.contains)

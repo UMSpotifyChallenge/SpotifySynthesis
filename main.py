@@ -1,9 +1,7 @@
 import argparse
 import random
 from operator import methodcaller
-from Track import Track
-from Playlist import Playlist
-from Model import Artist, Album, Genre
+from Model import Genre, Artist, Album, Track, Playlist
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -40,7 +38,6 @@ if __name__ == '__main__':
             for _ in range(tracksPerAlbum):
                 track = Track.create()
                 track.added_to_album(album)
-
 
     for _ in range(playlistCount):
         p = Playlist.create()
