@@ -16,22 +16,4 @@ class Playlist(Model):
     # def count(self):
     #     return len(self.tracks)
 
-    def print_edge_pair(self):
-        with open("edgepair.txt", 'a') as f_out:
-            for t in self.contains:
-                f_out.write(str(self.iid))
-                f_out.write("\t")
-                f_out.write(str(t.iid))
-                f_out.write("\n")
-                # print(self.pid, t.tid, sep="\t")
-
-    def print_hypergraph(self):
-        with open("hypergraph.txt", 'a') as f_out:
-            # print(self.pid, end=":\t")
-            f_out.write(str(self.iid))
-            f_out.write("\t")
-            for t in self.contains:
-                f_out.write(str(t.iid))
-                f_out.write(",")
-            f_out.write("\n")
 
