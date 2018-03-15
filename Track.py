@@ -16,6 +16,14 @@ class Track(Model):
     #     cls.tracks.append(t)
     #     return t
 
+    def __init__(self, iid):
+        super().__init__(iid)
+        self.album = None
+
+    def added_to_album(self, album):
+        self.album = album
+        album.contains.append(self)
+
     def added_to_playlist(self, p):
         self.contains.append(p)
 

@@ -43,9 +43,10 @@ class Model(metaclass=ModelMeta):
 
 
 class Artist(Model):
-    def add_album(self, album):
-        album.added_to_artist(self)
-        self.contains.append(album)
+    # def add_album(self, album):
+    #     album.added_to_artist(self)
+    #     self.contains.append(album)
+    pass
 
 
 class Album(Model):
@@ -56,12 +57,15 @@ class Album(Model):
 
     def added_to_artist(self, artist):
         self.artist = artist
+        artist.contains.append(self)
 
     def added_to_genre(self, genre):
         self.genre = genre
+        genre.contains.append(self)
 
 
 class Genre(Model):
-    def add_album(self, album):
-        album.added_to_genre(self)
-        self.contains.append(album)
+    # def add_album(self, album):
+    #     album.added_to_genre(self)
+    #     self.contains.append(album)
+    pass

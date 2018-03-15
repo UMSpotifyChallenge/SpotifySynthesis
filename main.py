@@ -1,8 +1,9 @@
 import argparse
-from random import sample
+import random
 from operator import methodcaller
 from Track import Track
 from Playlist import Playlist
+from Model import Artist, Album, Genre
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -21,14 +22,29 @@ if __name__ == '__main__':
     genreCount = args.genre
     artistCount = args.artist
     playlistCount = args.playlist
-    albumsPerArtist = range(args.min_albums_per_artist, args.max_albums_per_artist)
-    tracksPerAlbum = range(args.min_tracks_per_album, args.max_tracks_per_album)
+    albumsPerArtistRange = range(args.min_albums_per_artist, args.max_albums_per_artist)
+    tracksPerAlbumRange = range(args.min_tracks_per_album, args.max_tracks_per_album)
     tracksPerPlaylistRange = range(args.min_tracks_per_playlist, args.max_tracks_per_playlist)
     overlapPercentage = args.overlap
 
+    for _ in range(genreCount):
+        Genre.create()
+
+    for _ in range(artistCount):
+        artist = Artist.create()
+        albumsPerArtist = random.choice(albumsPerArtistRange)
+        for _ in range(albumsPerArtist):
+            album = Album.create()
+            album.added_to_artist(artist)
+            tracksPerAlbum = random.choice(tracksPerAlbumRange)
+            for _ in range(tracksPerAlbum):
+                track = Track.create()
+                track.added_to_album(album)
+
+
     for _ in range(playlistCount):
         p = Playlist.create()
-        tracksPerPlaylist = sample(tracksPerPlaylistRange, 1)[0]
+        tracksPerPlaylist = random.choice(tracksPerPlaylistRange)
         if p.iid == 0:
             for tid in range(tracksPerPlaylist):
                 t = Track.create()
@@ -36,7 +52,7 @@ if __name__ == '__main__':
         else:
             overlapCount = int(tracksPerPlaylist*overlapPercentage/100)
             # randomly choose previously created tracks as many as overlap count
-            previous = sample(range(Track.counts()), overlapCount)
+            previous = random.sample(range(Track.counts()), overlapCount)
             for tid in previous:
                 t = Track.all_items[tid] # previous tracks
                 p.add_track(t)
