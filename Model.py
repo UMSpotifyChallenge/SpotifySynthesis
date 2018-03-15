@@ -24,9 +24,12 @@ class Model(metaclass=ModelMeta):
     def counts(cls):
         return len(cls.all_items)
 
+    def tracks(self):
+        return self.contains
+
     def print_edge_pair(self):
         with open(self.__class__.__name__+"_edgepair.txt", 'a') as f_out:
-            for t in self.contains:
+            for t in self.tracks():
                 f_out.write(str(self.iid))
                 f_out.write("\t")
                 f_out.write(str(t.iid))
@@ -38,18 +41,26 @@ class Model(metaclass=ModelMeta):
             # print(self.pid, end=":\t")
             f_out.write(str(self.iid))
             f_out.write("\t")
-            for t in self.contains:
+            for t in self.tracks():
                 f_out.write(str(t.iid))
                 f_out.write(",")
             f_out.write("\n")
 
 
 class Genre(Model):
-    pass
+    def tracks(self):
+        result = []
+        for album in self.contains:
+            result += album.contains
+        return result
 
 
 class Artist(Model):
-    pass
+    def tracks(self):
+        result = []
+        for album in self.contains:
+            result += album.contains
+        return result
 
 
 class Album(Model):
@@ -71,22 +82,20 @@ class Track(Model):
     def __init__(self, iid):
         super().__init__(iid)
         self.album = None
+        self.playlists = []
 
     def added_to_album(self, album):
         self.album = album
         album.contains.append(self)
 
     def added_to_playlist(self, p):
-        self.contains.append(p)
+        self.playlists.append(p)
+        p.contains.append(self)
 
     def number_of_appearance(self):
-        return len(self.contains)
+        return len(self.playlists)
 
 
 class Playlist(Model):
-    def add_track(self, t):
-        t.added_to_playlist(self)
-        self.contains.append(t)
-
     def shuffle(self):
         shuffle(self.contains)

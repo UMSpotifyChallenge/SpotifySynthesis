@@ -45,18 +45,18 @@ if __name__ == '__main__':
         if p.iid == 0:
             for tid in range(tracksPerPlaylist):
                 t = Track.create()
-                p.add_track(t)
+                t.added_to_playlist(p)
         else:
             overlapCount = int(tracksPerPlaylist*overlapPercentage/100)
             # randomly choose previously created tracks as many as overlap count
             previous = random.sample(range(Track.counts()), overlapCount)
             for tid in previous:
                 t = Track.all_items[tid] # previous tracks
-                p.add_track(t)
+                t.added_to_playlist(p)
             # create new tracks
             for tid in range(tracksPerPlaylist - overlapCount):
                 t = Track.create() # new track
-                p.add_track(t)
+                t.added_to_playlist(p)
         p.shuffle()
 
 
