@@ -3,3 +3,4 @@ venv/
 *pycache*
 *edgepair.txt
 *hypergraph.txt
+result.txt
