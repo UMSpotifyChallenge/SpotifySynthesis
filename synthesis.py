@@ -5,6 +5,8 @@ from operator import methodcaller
 from Model import Genre, Artist, Album, Track, Playlist
 
 if __name__ == '__main__':
+    file = open("README", "w") # README is our result, so that github will show it nicely :)
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--genre", type=int, default=8, help="number of genres")
     parser.add_argument("--artist", type=int, default=50, help="number of artists")
@@ -16,6 +18,9 @@ if __name__ == '__main__':
     parser.add_argument("--min_tracks_per_playlist", type=int, default=20, help="min number of songs per playlist")
     parser.add_argument("--max_tracks_per_playlist", type=int, default=50, help="max number of songs per playlist")
     args = parser.parse_args()
+
+    parser.print_help(file=file)
+    print(file=file)
 
     genreCount = args.genre
     artistCount = args.artist
@@ -58,7 +63,6 @@ if __name__ == '__main__':
                     break
         playlist.shuffle()
 
-    file = open("result.txt", "w")
     print("# tracks: ", Track.counts(), file=file)
     print("# albums: ", Album.counts(), file=file)
 

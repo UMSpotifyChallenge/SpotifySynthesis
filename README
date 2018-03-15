@@ -1,6 +1,117 @@
->> python3 main.py
+usage: synthesis.py [-h] [--genre GENRE] [--artist ARTIST]
+                    [--playlist PLAYLIST]
+                    [--min_albums_per_artist MIN_ALBUMS_PER_ARTIST]
+                    [--max_albums_per_artist MAX_ALBUMS_PER_ARTIST]
+                    [--min_tracks_per_album MIN_TRACKS_PER_ALBUM]
+                    [--max_tracks_per_album MAX_TRACKS_PER_ALBUM]
+                    [--min_tracks_per_playlist MIN_TRACKS_PER_PLAYLIST]
+                    [--max_tracks_per_playlist MAX_TRACKS_PER_PLAYLIST]
 
 optional arguments:
-  --p P       number of playlists
-  --t T       number of tracks in each playlist
-  --o O       number of tracks overlapping
+  -h, --help            show this help message and exit
+  --genre GENRE         number of genres
+  --artist ARTIST       number of artists
+  --playlist PLAYLIST   number of playlists
+  --min_albums_per_artist MIN_ALBUMS_PER_ARTIST
+                        min number of albums per artists
+  --max_albums_per_artist MAX_ALBUMS_PER_ARTIST
+                        max number of albums per artists
+  --min_tracks_per_album MIN_TRACKS_PER_ALBUM
+                        min number of songs per album
+  --max_tracks_per_album MAX_TRACKS_PER_ALBUM
+                        max number of songs per album
+  --min_tracks_per_playlist MIN_TRACKS_PER_PLAYLIST
+                        min number of songs per playlist
+  --max_tracks_per_playlist MAX_TRACKS_PER_PLAYLIST
+                        max number of songs per playlist
+
+# tracks:  1396
+# albums:  138
+# genres:  8
+	Genre 0:	17 albums,	164 tracks
+	Genre 1:	20 albums,	182 tracks
+	Genre 2:	17 albums,	176 tracks
+	Genre 3:	12 albums,	110 tracks
+	Genre 4:	16 albums,	163 tracks
+	Genre 5:	18 albums,	191 tracks
+	Genre 6:	20 albums,	216 tracks
+	Genre 7:	18 albums,	194 tracks
+# artists:  50
+	Artist 0:	1 albums,	12 tracks	in 1 genres
+	Artist 1:	3 albums,	33 tracks	in 1 genres
+	Artist 2:	2 albums,	23 tracks	in 2 genres
+	Artist 3:	3 albums,	26 tracks	in 1 genres
+	Artist 4:	3 albums,	39 tracks	in 2 genres
+	Artist 5:	3 albums,	34 tracks	in 2 genres
+	Artist 6:	4 albums,	42 tracks	in 2 genres
+	Artist 7:	3 albums,	26 tracks	in 1 genres
+	Artist 8:	5 albums,	42 tracks	in 2 genres
+	Artist 9:	2 albums,	24 tracks	in 1 genres
+	Artist 10:	2 albums,	24 tracks	in 1 genres
+	Artist 11:	1 albums,	14 tracks	in 1 genres
+	Artist 12:	4 albums,	35 tracks	in 1 genres
+	Artist 13:	1 albums,	13 tracks	in 1 genres
+	Artist 14:	2 albums,	24 tracks	in 1 genres
+	Artist 15:	4 albums,	51 tracks	in 2 genres
+	Artist 16:	3 albums,	36 tracks	in 2 genres
+	Artist 17:	5 albums,	49 tracks	in 3 genres
+	Artist 18:	5 albums,	59 tracks	in 2 genres
+	Artist 19:	1 albums,	7 tracks	in 1 genres
+	Artist 20:	3 albums,	30 tracks	in 1 genres
+	Artist 21:	2 albums,	24 tracks	in 1 genres
+	Artist 22:	5 albums,	47 tracks	in 2 genres
+	Artist 23:	4 albums,	40 tracks	in 1 genres
+	Artist 24:	2 albums,	12 tracks	in 2 genres
+	Artist 25:	2 albums,	19 tracks	in 2 genres
+	Artist 26:	5 albums,	44 tracks	in 2 genres
+	Artist 27:	5 albums,	46 tracks	in 2 genres
+	Artist 28:	2 albums,	21 tracks	in 2 genres
+	Artist 29:	1 albums,	5 tracks	in 1 genres
+	Artist 30:	1 albums,	14 tracks	in 1 genres
+	Artist 31:	4 albums,	41 tracks	in 1 genres
+	Artist 32:	2 albums,	17 tracks	in 2 genres
+	Artist 33:	2 albums,	22 tracks	in 1 genres
+	Artist 34:	3 albums,	30 tracks	in 1 genres
+	Artist 35:	2 albums,	19 tracks	in 1 genres
+	Artist 36:	3 albums,	24 tracks	in 3 genres
+	Artist 37:	4 albums,	40 tracks	in 1 genres
+	Artist 38:	1 albums,	11 tracks	in 1 genres
+	Artist 39:	1 albums,	14 tracks	in 1 genres
+	Artist 40:	2 albums,	24 tracks	in 1 genres
+	Artist 41:	4 albums,	29 tracks	in 2 genres
+	Artist 42:	1 albums,	10 tracks	in 1 genres
+	Artist 43:	1 albums,	11 tracks	in 1 genres
+	Artist 44:	4 albums,	45 tracks	in 2 genres
+	Artist 45:	4 albums,	42 tracks	in 2 genres
+	Artist 46:	2 albums,	17 tracks	in 1 genres
+	Artist 47:	2 albums,	19 tracks	in 2 genres
+	Artist 48:	5 albums,	42 tracks	in 2 genres
+	Artist 49:	2 albums,	24 tracks	in 2 genres
+# appearance of track in playlists
+	Tracks in range(0, 50):	215
+	Tracks in range(50, 100):	306
+	Tracks in range(100, 150):	202
+	Tracks in range(150, 200):	187
+	Tracks in range(200, 250):	205
+	Tracks in range(250, 300):	176
+	Tracks in range(300, 350):	174
+	Tracks in range(350, 400):	136
+	Tracks in range(400, 450):	128
+	Tracks in range(450, 500):	177
+	Tracks in range(500, 550):	131
+	Tracks in range(550, 600):	146
+	Tracks in range(600, 650):	181
+	Tracks in range(650, 700):	105
+	Tracks in range(700, 750):	83
+	Tracks in range(750, 800):	125
+	Tracks in range(800, 850):	136
+	Tracks in range(850, 900):	146
+	Tracks in range(900, 950):	49
+	Tracks in range(950, 1000):	93
+	Tracks in range(1000, 1050):	86
+	Tracks in range(1050, 1100):	64
+	Tracks in range(1100, 1150):	43
+	Tracks in range(1150, 1200):	56
+	Tracks in range(1200, 1250):	30
+	Tracks in range(1250, 1300):	26
+	Tracks in range(1300, 1350):	38
