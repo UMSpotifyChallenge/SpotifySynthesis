@@ -67,6 +67,23 @@ if __name__ == '__main__':
                 if playlist.add_track(track):  # check no duplicate
                     break
         playlist.shuffle()
+        # To get analysis
+        # total_length = len(playlist.tracks())
+
+        # f1 = Feature1.all_items[biasGenre % Feature1.counts()]
+        # f1_list = list(filter(lambda t: t.f1 == f1, playlist.tracks()))
+        # f1_length = len(f1_list)
+        
+        # f2 = Feature2.all_items[biasGenre % Feature2.counts()]
+        # f2_list = list(filter(lambda t: t.f2 == f2, playlist.tracks()))
+        # f2_length = len(f2_list)
+
+        # f3 = Feature3.all_items[biasGenre % Feature3.counts()]
+        # f3_list = list(filter(lambda t: t.f3 == f3, playlist.tracks()))
+        # f3_length = len(f3_list)
+
+        # print("{0:.2f}, {0:.2f}, {0:.2f}".format(f1_length/total_length, f2_length/total_length, f3_length/total_length))
+        
 
     print("# tracks: ", Track.counts(), file=file)
     print("# albums: ", Album.counts(), file=file)
