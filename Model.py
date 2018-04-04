@@ -103,12 +103,11 @@ class Track(Model):
         self.album = album
         album.contains.append(self)
 
-        gid = self.album.genre.iid  # feature value is determined by track's genre
-        self.f1 = Feature1.chooseRandom(gid)
+        self.f1 = Feature1.chooseRandom()  # feature value is arbitrarily random
         self.f1.contains.append(self)
-        self.f2 = Feature2.chooseRandom(gid)
+        self.f2 = Feature2.chooseRandom()  # feature value is arbitrarily random
         self.f2.contains.append(self)
-        self.f3 = Feature3.chooseRandom(gid)
+        self.f3 = Feature3.chooseRandom()  # feature value is arbitrarily random
         self.f3.contains.append(self)
 
     def added_to_playlist(self, p):
@@ -147,11 +146,8 @@ class Feature(Model):
             cls.create()
 
     @classmethod
-    def chooseRandom(cls, seed):
-        bias = seed % cls.counts()  # based on seed
-        weights = [1] * cls.counts()
-        weights[bias] = cls.counts() * random.choice(range(3, 9))  # probability of biased is 75% ~ 90%
-        return random.choices(cls.all_items, weights)[0]
+    def chooseRandom(cls):
+        return random.choice(cls.all_items)
 
     @classmethod
     def print_result(cls, file):

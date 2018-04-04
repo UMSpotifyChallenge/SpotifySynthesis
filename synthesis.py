@@ -56,16 +56,41 @@ if __name__ == '__main__':
     for pid in range(playlistCount):
         playlist = Playlist.create()
         biasGenre = pid % genreCount  # a playlist is likely to be based on certain genre
+        biasFeat1 = random.randrange(Feature1.counts())
+        biasFeat2 = random.randrange(Feature2.counts())
+        biasFeat3 = random.randrange(Feature3.counts())
+
         weights = [1] * genreCount
+        weightsFeat1 = [1] * Feature1.counts()
+        weightsFeat2 = [1] * Feature2.counts()
+        weightsFeat3 = [1] * Feature3.counts()
         weights[biasGenre] = genreCount * random.choice(range(3, 9))  # probability of biased genre is 75% ~ 90%
+        weightsFeat1[biasFeat1] = Feature1.counts() * random.choice(range(5, 9))   # probability of biased feat is 80% ~ 90%
+        weightsFeat2[biasFeat2] = Feature2.counts() * random.choice(range(4, 9))   # probability of biased feat is 78% ~ 90%
+        weightsFeat3[biasFeat3] = Feature3.counts() * random.choice(range(3, 9))   # probability of biased feat is 75% ~ 90%
+
         tracksPerPlaylist = random.choice(tracksPerPlaylistRange)  # random number of tracks
         for _ in range(tracksPerPlaylist):
             genre = random.choices(Genre.all_items, weights)[0]  # it chooses random genre with bias
-            while True:
-                t = int(np.random.triangular(0, 0, len(genre.tracks())))  # lower-numbered tracks are more likely
-                track = genre.tracks()[t]
+            feat1 = random.choices(Feature1.all_items, weightsFeat1)[0]  # it chooses random feat with bias
+            feat2 = random.choices(Feature2.all_items, weightsFeat2)[0]  # it chooses random feat with bias
+            feat3 = random.choices(Feature3.all_items, weightsFeat3)[0]  # it chooses random feat with bias
+
+            genreTracks = genre.tracks()
+            random.shuffle(genreTracks)
+            for track in genreTracks:
+
+                correctFeats = []
+                correctFeats.append(track.f1 == feat1)
+                correctFeats.append(track.f2 == feat2)
+                correctFeats.append(track.f3 == feat3)
+                if sum(correctFeats) < 2:  # if less than 2 features are correct, do not add track
+                    continue
                 if playlist.add_track(track):  # check no duplicate
                     break
+
+        if len(playlist.tracks()) < tracksPerPlaylist:
+            print("Warning: Playlist {} failed to be filled with tracks (short by {})".format(str(Playlist.counts()-1),str(tracksPerPlaylist - len(playlist.tracks()))))
         playlist.shuffle()
         # To get analysis
         # total_length = len(playlist.tracks())
@@ -73,7 +98,7 @@ if __name__ == '__main__':
         # f1 = Feature1.all_items[biasGenre % Feature1.counts()]
         # f1_list = list(filter(lambda t: t.f1 == f1, playlist.tracks()))
         # f1_length = len(f1_list)
-        
+
         # f2 = Feature2.all_items[biasGenre % Feature2.counts()]
         # f2_list = list(filter(lambda t: t.f2 == f2, playlist.tracks()))
         # f2_length = len(f2_list)
@@ -83,7 +108,7 @@ if __name__ == '__main__':
         # f3_length = len(f3_list)
 
         # print("{0:.2f}, {0:.2f}, {0:.2f}".format(f1_length/total_length, f2_length/total_length, f3_length/total_length))
-        
+
 
     print("# tracks: ", Track.counts(), file=file)
     print("# albums: ", Album.counts(), file=file)

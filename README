@@ -25,204 +25,370 @@ optional arguments:
   --max_tracks_per_playlist MAX_TRACKS_PER_PLAYLIST
                         max number of songs per playlist
 
-# tracks:  3003
-# albums:  301
+# tracks:  6055
+# albums:  596
 # genres:  8
-	Genre 0:	38 albums,	354 tracks
-	Genre 1:	40 albums,	390 tracks
-	Genre 2:	33 albums,	333 tracks
-	Genre 3:	43 albums,	438 tracks
-	Genre 4:	35 albums,	345 tracks
-	Genre 5:	37 albums,	378 tracks
-	Genre 6:	36 albums,	363 tracks
-	Genre 7:	39 albums,	402 tracks
-# artists:  100
-	Artist 0:	3 albums,	30 tracks	in 2 genres
-	Artist 1:	3 albums,	27 tracks	in 1 genres
-	Artist 2:	3 albums,	37 tracks	in 2 genres
-	Artist 3:	3 albums,	25 tracks	in 2 genres
-	Artist 4:	3 albums,	36 tracks	in 1 genres
-	Artist 5:	5 albums,	37 tracks	in 3 genres
-	Artist 6:	5 albums,	49 tracks	in 3 genres
-	Artist 7:	4 albums,	45 tracks	in 2 genres
-	Artist 8:	2 albums,	24 tracks	in 1 genres
-	Artist 9:	5 albums,	54 tracks	in 2 genres
-	Artist 10:	1 albums,	14 tracks	in 1 genres
-	Artist 11:	3 albums,	25 tracks	in 1 genres
-	Artist 12:	2 albums,	20 tracks	in 2 genres
-	Artist 13:	2 albums,	15 tracks	in 2 genres
-	Artist 14:	4 albums,	40 tracks	in 2 genres
-	Artist 15:	1 albums,	8 tracks	in 1 genres
-	Artist 16:	2 albums,	21 tracks	in 1 genres
-	Artist 17:	2 albums,	18 tracks	in 2 genres
-	Artist 18:	2 albums,	20 tracks	in 1 genres
-	Artist 19:	2 albums,	20 tracks	in 1 genres
-	Artist 20:	4 albums,	30 tracks	in 1 genres
-	Artist 21:	5 albums,	57 tracks	in 2 genres
-	Artist 22:	4 albums,	50 tracks	in 1 genres
-	Artist 23:	3 albums,	19 tracks	in 1 genres
-	Artist 24:	5 albums,	50 tracks	in 3 genres
-	Artist 25:	3 albums,	24 tracks	in 2 genres
-	Artist 26:	1 albums,	12 tracks	in 1 genres
-	Artist 27:	1 albums,	9 tracks	in 1 genres
-	Artist 28:	4 albums,	42 tracks	in 2 genres
-	Artist 29:	2 albums,	14 tracks	in 1 genres
-	Artist 30:	2 albums,	16 tracks	in 2 genres
-	Artist 31:	2 albums,	18 tracks	in 1 genres
-	Artist 32:	1 albums,	12 tracks	in 1 genres
-	Artist 33:	2 albums,	25 tracks	in 1 genres
-	Artist 34:	4 albums,	49 tracks	in 3 genres
-	Artist 35:	3 albums,	30 tracks	in 1 genres
-	Artist 36:	3 albums,	36 tracks	in 2 genres
-	Artist 37:	5 albums,	56 tracks	in 1 genres
-	Artist 38:	1 albums,	6 tracks	in 1 genres
-	Artist 39:	3 albums,	27 tracks	in 2 genres
-	Artist 40:	5 albums,	37 tracks	in 1 genres
-	Artist 41:	3 albums,	35 tracks	in 1 genres
-	Artist 42:	1 albums,	7 tracks	in 1 genres
-	Artist 43:	1 albums,	10 tracks	in 1 genres
-	Artist 44:	2 albums,	28 tracks	in 2 genres
-	Artist 45:	1 albums,	11 tracks	in 1 genres
-	Artist 46:	2 albums,	16 tracks	in 2 genres
-	Artist 47:	4 albums,	47 tracks	in 1 genres
-	Artist 48:	1 albums,	8 tracks	in 1 genres
-	Artist 49:	3 albums,	23 tracks	in 1 genres
-	Artist 50:	1 albums,	11 tracks	in 1 genres
-	Artist 51:	5 albums,	61 tracks	in 1 genres
-	Artist 52:	2 albums,	17 tracks	in 1 genres
-	Artist 53:	3 albums,	33 tracks	in 2 genres
-	Artist 54:	5 albums,	57 tracks	in 1 genres
-	Artist 55:	3 albums,	27 tracks	in 2 genres
-	Artist 56:	2 albums,	16 tracks	in 1 genres
-	Artist 57:	1 albums,	10 tracks	in 1 genres
-	Artist 58:	4 albums,	28 tracks	in 2 genres
-	Artist 59:	4 albums,	44 tracks	in 2 genres
-	Artist 60:	2 albums,	16 tracks	in 1 genres
-	Artist 61:	4 albums,	34 tracks	in 1 genres
-	Artist 62:	3 albums,	27 tracks	in 2 genres
-	Artist 63:	4 albums,	56 tracks	in 1 genres
-	Artist 64:	5 albums,	50 tracks	in 1 genres
-	Artist 65:	2 albums,	23 tracks	in 1 genres
-	Artist 66:	3 albums,	32 tracks	in 1 genres
-	Artist 67:	2 albums,	21 tracks	in 2 genres
-	Artist 68:	5 albums,	54 tracks	in 3 genres
-	Artist 69:	4 albums,	34 tracks	in 2 genres
-	Artist 70:	5 albums,	54 tracks	in 2 genres
-	Artist 71:	5 albums,	37 tracks	in 1 genres
-	Artist 72:	1 albums,	11 tracks	in 1 genres
-	Artist 73:	3 albums,	32 tracks	in 1 genres
-	Artist 74:	3 albums,	35 tracks	in 2 genres
-	Artist 75:	3 albums,	33 tracks	in 2 genres
-	Artist 76:	5 albums,	43 tracks	in 2 genres
-	Artist 77:	1 albums,	11 tracks	in 1 genres
-	Artist 78:	5 albums,	62 tracks	in 1 genres
-	Artist 79:	4 albums,	36 tracks	in 2 genres
-	Artist 80:	5 albums,	41 tracks	in 1 genres
-	Artist 81:	5 albums,	41 tracks	in 1 genres
-	Artist 82:	4 albums,	38 tracks	in 2 genres
-	Artist 83:	5 albums,	49 tracks	in 3 genres
-	Artist 84:	1 albums,	14 tracks	in 1 genres
-	Artist 85:	4 albums,	35 tracks	in 2 genres
-	Artist 86:	3 albums,	32 tracks	in 2 genres
-	Artist 87:	4 albums,	53 tracks	in 2 genres
-	Artist 88:	3 albums,	29 tracks	in 1 genres
-	Artist 89:	3 albums,	18 tracks	in 1 genres
-	Artist 90:	2 albums,	30 tracks	in 1 genres
-	Artist 91:	5 albums,	51 tracks	in 1 genres
-	Artist 92:	4 albums,	33 tracks	in 1 genres
-	Artist 93:	1 albums,	13 tracks	in 1 genres
-	Artist 94:	1 albums,	5 tracks	in 1 genres
-	Artist 95:	2 albums,	30 tracks	in 1 genres
-	Artist 96:	2 albums,	20 tracks	in 1 genres
-	Artist 97:	3 albums,	30 tracks	in 1 genres
-	Artist 98:	2 albums,	21 tracks	in 1 genres
-	Artist 99:	5 albums,	46 tracks	in 1 genres
+	Genre 0:	89 albums,	891 tracks
+	Genre 1:	72 albums,	695 tracks
+	Genre 2:	62 albums,	641 tracks
+	Genre 3:	74 albums,	779 tracks
+	Genre 4:	79 albums,	800 tracks
+	Genre 5:	79 albums,	802 tracks
+	Genre 6:	72 albums,	726 tracks
+	Genre 7:	69 albums,	721 tracks
+# artists:  200
+	Artist 0:	5 albums,	47 tracks	in 2 genres
+	Artist 1:	2 albums,	15 tracks	in 1 genres
+	Artist 2:	1 albums,	12 tracks	in 1 genres
+	Artist 3:	3 albums,	17 tracks	in 1 genres
+	Artist 4:	3 albums,	29 tracks	in 1 genres
+	Artist 5:	5 albums,	58 tracks	in 2 genres
+	Artist 6:	1 albums,	5 tracks	in 1 genres
+	Artist 7:	3 albums,	28 tracks	in 1 genres
+	Artist 8:	1 albums,	6 tracks	in 1 genres
+	Artist 9:	4 albums,	37 tracks	in 1 genres
+	Artist 10:	2 albums,	22 tracks	in 1 genres
+	Artist 11:	5 albums,	45 tracks	in 1 genres
+	Artist 12:	2 albums,	16 tracks	in 1 genres
+	Artist 13:	2 albums,	27 tracks	in 2 genres
+	Artist 14:	4 albums,	41 tracks	in 2 genres
+	Artist 15:	1 albums,	6 tracks	in 1 genres
+	Artist 16:	4 albums,	45 tracks	in 3 genres
+	Artist 17:	5 albums,	51 tracks	in 3 genres
+	Artist 18:	4 albums,	35 tracks	in 1 genres
+	Artist 19:	3 albums,	37 tracks	in 1 genres
+	Artist 20:	5 albums,	44 tracks	in 1 genres
+	Artist 21:	2 albums,	16 tracks	in 1 genres
+	Artist 22:	3 albums,	27 tracks	in 1 genres
+	Artist 23:	3 albums,	30 tracks	in 2 genres
+	Artist 24:	3 albums,	35 tracks	in 2 genres
+	Artist 25:	3 albums,	33 tracks	in 1 genres
+	Artist 26:	5 albums,	56 tracks	in 1 genres
+	Artist 27:	5 albums,	51 tracks	in 1 genres
+	Artist 28:	1 albums,	7 tracks	in 1 genres
+	Artist 29:	2 albums,	18 tracks	in 1 genres
+	Artist 30:	3 albums,	34 tracks	in 1 genres
+	Artist 31:	2 albums,	25 tracks	in 1 genres
+	Artist 32:	2 albums,	20 tracks	in 1 genres
+	Artist 33:	3 albums,	27 tracks	in 3 genres
+	Artist 34:	4 albums,	48 tracks	in 3 genres
+	Artist 35:	1 albums,	15 tracks	in 1 genres
+	Artist 36:	1 albums,	15 tracks	in 1 genres
+	Artist 37:	5 albums,	50 tracks	in 3 genres
+	Artist 38:	5 albums,	53 tracks	in 3 genres
+	Artist 39:	3 albums,	33 tracks	in 1 genres
+	Artist 40:	5 albums,	63 tracks	in 1 genres
+	Artist 41:	1 albums,	5 tracks	in 1 genres
+	Artist 42:	4 albums,	45 tracks	in 1 genres
+	Artist 43:	2 albums,	11 tracks	in 1 genres
+	Artist 44:	3 albums,	30 tracks	in 1 genres
+	Artist 45:	4 albums,	34 tracks	in 1 genres
+	Artist 46:	3 albums,	30 tracks	in 2 genres
+	Artist 47:	2 albums,	24 tracks	in 1 genres
+	Artist 48:	4 albums,	47 tracks	in 3 genres
+	Artist 49:	5 albums,	49 tracks	in 3 genres
+	Artist 50:	2 albums,	15 tracks	in 1 genres
+	Artist 51:	3 albums,	40 tracks	in 1 genres
+	Artist 52:	3 albums,	25 tracks	in 1 genres
+	Artist 53:	1 albums,	14 tracks	in 1 genres
+	Artist 54:	1 albums,	10 tracks	in 1 genres
+	Artist 55:	1 albums,	14 tracks	in 1 genres
+	Artist 56:	5 albums,	44 tracks	in 1 genres
+	Artist 57:	1 albums,	7 tracks	in 1 genres
+	Artist 58:	4 albums,	44 tracks	in 1 genres
+	Artist 59:	2 albums,	22 tracks	in 1 genres
+	Artist 60:	3 albums,	30 tracks	in 1 genres
+	Artist 61:	3 albums,	19 tracks	in 2 genres
+	Artist 62:	3 albums,	31 tracks	in 1 genres
+	Artist 63:	1 albums,	12 tracks	in 1 genres
+	Artist 64:	4 albums,	46 tracks	in 2 genres
+	Artist 65:	3 albums,	36 tracks	in 2 genres
+	Artist 66:	3 albums,	37 tracks	in 1 genres
+	Artist 67:	2 albums,	14 tracks	in 2 genres
+	Artist 68:	5 albums,	54 tracks	in 2 genres
+	Artist 69:	4 albums,	39 tracks	in 1 genres
+	Artist 70:	2 albums,	22 tracks	in 2 genres
+	Artist 71:	5 albums,	52 tracks	in 2 genres
+	Artist 72:	2 albums,	18 tracks	in 2 genres
+	Artist 73:	2 albums,	20 tracks	in 1 genres
+	Artist 74:	2 albums,	28 tracks	in 1 genres
+	Artist 75:	1 albums,	8 tracks	in 1 genres
+	Artist 76:	4 albums,	29 tracks	in 1 genres
+	Artist 77:	4 albums,	37 tracks	in 2 genres
+	Artist 78:	3 albums,	32 tracks	in 1 genres
+	Artist 79:	5 albums,	48 tracks	in 2 genres
+	Artist 80:	3 albums,	26 tracks	in 1 genres
+	Artist 81:	1 albums,	15 tracks	in 1 genres
+	Artist 82:	1 albums,	12 tracks	in 1 genres
+	Artist 83:	5 albums,	48 tracks	in 2 genres
+	Artist 84:	3 albums,	33 tracks	in 1 genres
+	Artist 85:	1 albums,	12 tracks	in 1 genres
+	Artist 86:	4 albums,	42 tracks	in 3 genres
+	Artist 87:	1 albums,	13 tracks	in 1 genres
+	Artist 88:	4 albums,	35 tracks	in 2 genres
+	Artist 89:	4 albums,	47 tracks	in 1 genres
+	Artist 90:	2 albums,	20 tracks	in 1 genres
+	Artist 91:	4 albums,	48 tracks	in 1 genres
+	Artist 92:	3 albums,	30 tracks	in 1 genres
+	Artist 93:	5 albums,	61 tracks	in 1 genres
+	Artist 94:	3 albums,	41 tracks	in 1 genres
+	Artist 95:	2 albums,	22 tracks	in 1 genres
+	Artist 96:	3 albums,	25 tracks	in 1 genres
+	Artist 97:	3 albums,	31 tracks	in 1 genres
+	Artist 98:	1 albums,	13 tracks	in 1 genres
+	Artist 99:	4 albums,	41 tracks	in 1 genres
+	Artist 100:	1 albums,	8 tracks	in 1 genres
+	Artist 101:	1 albums,	15 tracks	in 1 genres
+	Artist 102:	4 albums,	37 tracks	in 1 genres
+	Artist 103:	3 albums,	25 tracks	in 1 genres
+	Artist 104:	3 albums,	31 tracks	in 1 genres
+	Artist 105:	3 albums,	24 tracks	in 2 genres
+	Artist 106:	1 albums,	12 tracks	in 1 genres
+	Artist 107:	2 albums,	26 tracks	in 2 genres
+	Artist 108:	3 albums,	34 tracks	in 1 genres
+	Artist 109:	2 albums,	16 tracks	in 1 genres
+	Artist 110:	5 albums,	33 tracks	in 1 genres
+	Artist 111:	1 albums,	9 tracks	in 1 genres
+	Artist 112:	4 albums,	40 tracks	in 1 genres
+	Artist 113:	1 albums,	8 tracks	in 1 genres
+	Artist 114:	1 albums,	10 tracks	in 1 genres
+	Artist 115:	4 albums,	55 tracks	in 2 genres
+	Artist 116:	1 albums,	13 tracks	in 1 genres
+	Artist 117:	3 albums,	37 tracks	in 1 genres
+	Artist 118:	1 albums,	8 tracks	in 1 genres
+	Artist 119:	1 albums,	8 tracks	in 1 genres
+	Artist 120:	5 albums,	52 tracks	in 2 genres
+	Artist 121:	4 albums,	45 tracks	in 2 genres
+	Artist 122:	4 albums,	34 tracks	in 1 genres
+	Artist 123:	4 albums,	40 tracks	in 2 genres
+	Artist 124:	4 albums,	40 tracks	in 1 genres
+	Artist 125:	5 albums,	50 tracks	in 2 genres
+	Artist 126:	1 albums,	12 tracks	in 1 genres
+	Artist 127:	5 albums,	49 tracks	in 1 genres
+	Artist 128:	5 albums,	54 tracks	in 1 genres
+	Artist 129:	4 albums,	40 tracks	in 1 genres
+	Artist 130:	4 albums,	49 tracks	in 1 genres
+	Artist 131:	4 albums,	45 tracks	in 3 genres
+	Artist 132:	1 albums,	6 tracks	in 1 genres
+	Artist 133:	3 albums,	34 tracks	in 2 genres
+	Artist 134:	3 albums,	32 tracks	in 1 genres
+	Artist 135:	3 albums,	28 tracks	in 1 genres
+	Artist 136:	2 albums,	18 tracks	in 2 genres
+	Artist 137:	1 albums,	6 tracks	in 1 genres
+	Artist 138:	2 albums,	24 tracks	in 1 genres
+	Artist 139:	3 albums,	35 tracks	in 1 genres
+	Artist 140:	2 albums,	18 tracks	in 2 genres
+	Artist 141:	4 albums,	46 tracks	in 1 genres
+	Artist 142:	1 albums,	15 tracks	in 1 genres
+	Artist 143:	1 albums,	7 tracks	in 1 genres
+	Artist 144:	3 albums,	28 tracks	in 1 genres
+	Artist 145:	3 albums,	30 tracks	in 1 genres
+	Artist 146:	2 albums,	25 tracks	in 2 genres
+	Artist 147:	4 albums,	47 tracks	in 2 genres
+	Artist 148:	4 albums,	54 tracks	in 2 genres
+	Artist 149:	5 albums,	45 tracks	in 3 genres
+	Artist 150:	2 albums,	25 tracks	in 2 genres
+	Artist 151:	4 albums,	50 tracks	in 2 genres
+	Artist 152:	1 albums,	8 tracks	in 1 genres
+	Artist 153:	5 albums,	57 tracks	in 3 genres
+	Artist 154:	5 albums,	55 tracks	in 1 genres
+	Artist 155:	2 albums,	22 tracks	in 1 genres
+	Artist 156:	3 albums,	34 tracks	in 3 genres
+	Artist 157:	2 albums,	20 tracks	in 1 genres
+	Artist 158:	4 albums,	39 tracks	in 2 genres
+	Artist 159:	3 albums,	33 tracks	in 2 genres
+	Artist 160:	4 albums,	42 tracks	in 1 genres
+	Artist 161:	1 albums,	5 tracks	in 1 genres
+	Artist 162:	1 albums,	6 tracks	in 1 genres
+	Artist 163:	5 albums,	55 tracks	in 2 genres
+	Artist 164:	4 albums,	44 tracks	in 2 genres
+	Artist 165:	4 albums,	42 tracks	in 1 genres
+	Artist 166:	2 albums,	20 tracks	in 2 genres
+	Artist 167:	1 albums,	12 tracks	in 1 genres
+	Artist 168:	2 albums,	23 tracks	in 1 genres
+	Artist 169:	4 albums,	39 tracks	in 2 genres
+	Artist 170:	5 albums,	41 tracks	in 1 genres
+	Artist 171:	4 albums,	41 tracks	in 1 genres
+	Artist 172:	2 albums,	19 tracks	in 1 genres
+	Artist 173:	1 albums,	7 tracks	in 1 genres
+	Artist 174:	4 albums,	33 tracks	in 1 genres
+	Artist 175:	3 albums,	39 tracks	in 1 genres
+	Artist 176:	4 albums,	36 tracks	in 1 genres
+	Artist 177:	5 albums,	33 tracks	in 3 genres
+	Artist 178:	3 albums,	24 tracks	in 3 genres
+	Artist 179:	2 albums,	13 tracks	in 2 genres
+	Artist 180:	3 albums,	41 tracks	in 2 genres
+	Artist 181:	1 albums,	11 tracks	in 1 genres
+	Artist 182:	5 albums,	54 tracks	in 2 genres
+	Artist 183:	4 albums,	39 tracks	in 1 genres
+	Artist 184:	5 albums,	42 tracks	in 2 genres
+	Artist 185:	1 albums,	13 tracks	in 1 genres
+	Artist 186:	2 albums,	12 tracks	in 2 genres
+	Artist 187:	4 albums,	28 tracks	in 3 genres
+	Artist 188:	5 albums,	56 tracks	in 1 genres
+	Artist 189:	3 albums,	25 tracks	in 2 genres
+	Artist 190:	5 albums,	54 tracks	in 2 genres
+	Artist 191:	2 albums,	14 tracks	in 2 genres
+	Artist 192:	5 albums,	51 tracks	in 1 genres
+	Artist 193:	5 albums,	40 tracks	in 1 genres
+	Artist 194:	2 albums,	26 tracks	in 2 genres
+	Artist 195:	1 albums,	6 tracks	in 1 genres
+	Artist 196:	2 albums,	22 tracks	in 1 genres
+	Artist 197:	4 albums,	30 tracks	in 1 genres
+	Artist 198:	5 albums,	63 tracks	in 2 genres
+	Artist 199:	4 albums,	38 tracks	in 2 genres
 # appearance of track in playlists
-	Tracks in range(0, 50):	1881
-	Tracks in range(50, 100):	1660
-	Tracks in range(100, 150):	1570
-	Tracks in range(150, 200):	1499
-	Tracks in range(200, 250):	1450
-	Tracks in range(250, 300):	1409
-	Tracks in range(300, 350):	1355
-	Tracks in range(350, 400):	1313
-	Tracks in range(400, 450):	1285
-	Tracks in range(450, 500):	1250
-	Tracks in range(500, 550):	1209
-	Tracks in range(550, 600):	1199
-	Tracks in range(600, 650):	1150
-	Tracks in range(650, 700):	1146
-	Tracks in range(700, 750):	1100
-	Tracks in range(750, 800):	1089
-	Tracks in range(800, 850):	1050
-	Tracks in range(850, 900):	1033
-	Tracks in range(900, 950):	1000
-	Tracks in range(950, 1000):	993
-	Tracks in range(1000, 1050):	950
-	Tracks in range(1050, 1100):	950
-	Tracks in range(1100, 1150):	906
-	Tracks in range(1150, 1200):	900
-	Tracks in range(1200, 1250):	862
-	Tracks in range(1250, 1300):	850
-	Tracks in range(1300, 1350):	801
-	Tracks in range(1350, 1400):	800
-	Tracks in range(1400, 1450):	767
-	Tracks in range(1450, 1500):	750
-	Tracks in range(1500, 1550):	717
-	Tracks in range(1550, 1600):	700
-	Tracks in range(1600, 1650):	655
-	Tracks in range(1650, 1700):	650
-	Tracks in range(1700, 1750):	615
-	Tracks in range(1750, 1800):	600
-	Tracks in range(1800, 1850):	558
-	Tracks in range(1850, 1900):	550
-	Tracks in range(1900, 1950):	520
-	Tracks in range(1950, 2000):	499
+	Tracks in range(0, 50):	794
+	Tracks in range(50, 100):	701
+	Tracks in range(100, 150):	676
+	Tracks in range(150, 200):	650
+	Tracks in range(200, 250):	648
+	Tracks in range(250, 300):	600
+	Tracks in range(300, 350):	600
+	Tracks in range(350, 400):	600
+	Tracks in range(400, 450):	600
+	Tracks in range(450, 500):	561
+	Tracks in range(500, 550):	550
+	Tracks in range(550, 600):	550
+	Tracks in range(600, 650):	550
+	Tracks in range(650, 700):	550
+	Tracks in range(700, 750):	550
+	Tracks in range(750, 800):	550
+	Tracks in range(800, 850):	528
+	Tracks in range(850, 900):	500
+	Tracks in range(900, 950):	500
+	Tracks in range(950, 1000):	500
+	Tracks in range(1000, 1050):	500
+	Tracks in range(1050, 1100):	500
+	Tracks in range(1100, 1150):	500
+	Tracks in range(1150, 1200):	500
+	Tracks in range(1200, 1250):	500
+	Tracks in range(1250, 1300):	500
+	Tracks in range(1300, 1350):	500
+	Tracks in range(1350, 1400):	485
+	Tracks in range(1400, 1450):	450
+	Tracks in range(1450, 1500):	450
+	Tracks in range(1500, 1550):	450
+	Tracks in range(1550, 1600):	450
+	Tracks in range(1600, 1650):	450
+	Tracks in range(1650, 1700):	450
+	Tracks in range(1700, 1750):	450
+	Tracks in range(1750, 1800):	450
+	Tracks in range(1800, 1850):	450
+	Tracks in range(1850, 1900):	450
+	Tracks in range(1900, 1950):	450
+	Tracks in range(1950, 2000):	450
 	Tracks in range(2000, 2050):	450
-	Tracks in range(2050, 2100):	450
-	Tracks in range(2100, 2150):	409
+	Tracks in range(2050, 2100):	405
+	Tracks in range(2100, 2150):	400
 	Tracks in range(2150, 2200):	400
-	Tracks in range(2200, 2250):	368
-	Tracks in range(2250, 2300):	350
-	Tracks in range(2300, 2350):	324
-	Tracks in range(2350, 2400):	300
-	Tracks in range(2400, 2450):	278
-	Tracks in range(2450, 2500):	250
-	Tracks in range(2500, 2550):	218
-	Tracks in range(2550, 2600):	200
-	Tracks in range(2600, 2650):	178
-	Tracks in range(2650, 2700):	150
-	Tracks in range(2700, 2750):	118
-	Tracks in range(2750, 2800):	100
-	Tracks in range(2800, 2850):	57
-	Tracks in range(2850, 2900):	50
-	Tracks in range(2900, 2950):	17
-	Tracks in range(2950, 3000):	0
-total # appearance:  44908
+	Tracks in range(2200, 2250):	400
+	Tracks in range(2250, 2300):	400
+	Tracks in range(2300, 2350):	400
+	Tracks in range(2350, 2400):	400
+	Tracks in range(2400, 2450):	400
+	Tracks in range(2450, 2500):	400
+	Tracks in range(2500, 2550):	400
+	Tracks in range(2550, 2600):	400
+	Tracks in range(2600, 2650):	400
+	Tracks in range(2650, 2700):	400
+	Tracks in range(2700, 2750):	400
+	Tracks in range(2750, 2800):	400
+	Tracks in range(2800, 2850):	388
+	Tracks in range(2850, 2900):	350
+	Tracks in range(2900, 2950):	350
+	Tracks in range(2950, 3000):	350
+	Tracks in range(3000, 3050):	350
+	Tracks in range(3050, 3100):	350
+	Tracks in range(3100, 3150):	350
+	Tracks in range(3150, 3200):	350
+	Tracks in range(3200, 3250):	350
+	Tracks in range(3250, 3300):	350
+	Tracks in range(3300, 3350):	350
+	Tracks in range(3350, 3400):	350
+	Tracks in range(3400, 3450):	350
+	Tracks in range(3450, 3500):	350
+	Tracks in range(3500, 3550):	350
+	Tracks in range(3550, 3600):	350
+	Tracks in range(3600, 3650):	350
+	Tracks in range(3650, 3700):	350
+	Tracks in range(3700, 3750):	308
+	Tracks in range(3750, 3800):	300
+	Tracks in range(3800, 3850):	300
+	Tracks in range(3850, 3900):	300
+	Tracks in range(3900, 3950):	300
+	Tracks in range(3950, 4000):	300
+	Tracks in range(4000, 4050):	300
+	Tracks in range(4050, 4100):	300
+	Tracks in range(4100, 4150):	300
+	Tracks in range(4150, 4200):	300
+	Tracks in range(4200, 4250):	300
+	Tracks in range(4250, 4300):	300
+	Tracks in range(4300, 4350):	300
+	Tracks in range(4350, 4400):	300
+	Tracks in range(4400, 4450):	300
+	Tracks in range(4450, 4500):	300
+	Tracks in range(4500, 4550):	289
+	Tracks in range(4550, 4600):	250
+	Tracks in range(4600, 4650):	250
+	Tracks in range(4650, 4700):	250
+	Tracks in range(4700, 4750):	250
+	Tracks in range(4750, 4800):	250
+	Tracks in range(4800, 4850):	250
+	Tracks in range(4850, 4900):	250
+	Tracks in range(4900, 4950):	250
+	Tracks in range(4950, 5000):	250
+	Tracks in range(5000, 5050):	250
+	Tracks in range(5050, 5100):	250
+	Tracks in range(5100, 5150):	250
+	Tracks in range(5150, 5200):	250
+	Tracks in range(5200, 5250):	214
+	Tracks in range(5250, 5300):	200
+	Tracks in range(5300, 5350):	200
+	Tracks in range(5350, 5400):	200
+	Tracks in range(5400, 5450):	200
+	Tracks in range(5450, 5500):	200
+	Tracks in range(5500, 5550):	200
+	Tracks in range(5550, 5600):	200
+	Tracks in range(5600, 5650):	200
+	Tracks in range(5650, 5700):	165
+	Tracks in range(5700, 5750):	150
+	Tracks in range(5750, 5800):	150
+	Tracks in range(5800, 5850):	150
+	Tracks in range(5850, 5900):	150
+	Tracks in range(5900, 5950):	117
+	Tracks in range(5950, 6000):	100
+	Tracks in range(6000, 6050):	69
+total # appearance:  45148
 Top 10 tracks
-	Track72:	43
-	Track82:	43
-	Track137:	43
-	Track90:	42
-	Track124:	42
-	Track198:	42
-	Track477:	42
-	Track2:	41
-	Track0:	40
-	Track370:	40
+	Track5987:	20
+	Track791:	19
+	Track1308:	18
+	Track3842:	18
+	Track4122:	18
+	Track5968:	18
+	Track578:	17
+	Track1953:	17
+	Track2942:	17
+	Track3582:	17
 Feature1
-	value 0:	669 tracks
-	value 1:	752 tracks
-	value 2:	362 tracks
-	value 3:	461 tracks
-	value 4:	371 tracks
-	value 5:	388 tracks
+	value 0:	779 tracks
+	value 1:	787 tracks
+	value 2:	732 tracks
+	value 3:	706 tracks
+	value 4:	802 tracks
+	value 5:	766 tracks
+	value 6:	794 tracks
+	value 7:	689 tracks
 Feature2
-	value 0:	1123 tracks
-	value 1:	1121 tracks
-	value 2:	759 tracks
+	value 0:	1535 tracks
+	value 1:	1485 tracks
+	value 2:	1515 tracks
+	value 3:	1520 tracks
 Feature3
-	value 0:	682 tracks
-	value 1:	779 tracks
-	value 2:	700 tracks
-	value 3:	842 tracks
+	value 0:	997 tracks
+	value 1:	938 tracks
+	value 2:	1052 tracks
+	value 3:	1020 tracks
+	value 4:	1043 tracks
+	value 5:	1005 tracks
